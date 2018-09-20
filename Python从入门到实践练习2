@@ -36,3 +36,22 @@ players.append('popo')
 print(a)
 print(players)
 
+元组
+
+a = (200,5)
+for b in a:
+    print(b)
+
+a = (400,5)
+for c in a:
+    print(c)
+
+zizhucan = ('kele','pijiu','baijiu','kafei','niunai')
+for d in zizhucan:
+    print(d)
+
+#d[0] = 250
+zizhucan = ('kele','pijiu','baijiu','qwe','ewq')
+print("\ngenghuan caidan:")
+for d in zizhucan:
+    print(d)
