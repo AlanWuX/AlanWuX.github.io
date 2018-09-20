@@ -1,0 +1,49 @@
+names = ['alan','sandy','tom','jack']
+print(names[0].title())
+print(names[1].title())
+print(names[2].title())
+print(names[3].title())
+
+x = 0
+for x in names:
+    message = "How are you" + "," + x.title() + "."
+    print(message)
+
+
+cars =['kalola','langyi','xr-v','siyu']
+
+
+
+y = 0
+for y in cars:     
+    message = "I want to bike a "  + y.title() + "."
+    print(message)     
+
+
+
+
+jiabin = ['tom','dad','bab']
+print(jiabin)
+
+print(jiabin[0]+" cann't come this party")
+jiabin[0] = 'tian'
+print(jiabin)
+print('I find a bigger table !')
+jiabin.insert(0,'dong')
+print(jiabin)
+jiabin.insert(2,'wei')
+print(jiabin)
+jiabin.append('liu')
+print(jiabin)
+print("I am sorry about that only two guests can come this party")
+for n in range(0,4):
+    num=1
+    num+=1
+    leave=jiabin.pop(num)
+    print(leave+" sorry for that you cant come party")
+for n in range(0,2):
+    print("congratulation "+jiabin[0]+" you can come party")
+    del jiabin[0]
+
+
+
