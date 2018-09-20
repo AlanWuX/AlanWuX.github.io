@@ -1,0 +1,38 @@
+a = []
+for b in range(1,11):
+    a.append(b**2)
+
+print(a)
+
+print(min(a))   #最小值
+print(max(a))   #最大值
+print(sum(a))   #总和值
+
+b = [c**2 for c in range(1,11)]  #简便写法
+print(b)
+
+进阶
+
+players = ['charles','martina','micheal','fflorence','eli']
+
+print("Here are the first three players on my team:")
+for player in players[:3]:
+    print(player.title())
+
+a = players[:]  #便是复制列表，如果输入a = players意思是与players列表关联，
+#改其中一个两个都修改了。而这里就是复制过去a,建立一个新的列表，互不影响
+print(a)
+
+a.append('toto')
+print(a)
+print(players)
+
+a = players
+
+a.append('aoao')
+print(a)
+print(players)
+players.append('popo')
+print(a)
+print(players)
+
