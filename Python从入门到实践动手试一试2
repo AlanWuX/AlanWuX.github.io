@@ -1,0 +1,37 @@
+pizza = ['pepperoni','rousi','xuegao']
+for piz in pizza:
+    print("I like " + piz + " pizza!")
+
+print("I really love pizza!\n")
+
+animals = ['cat','pig','dog']
+for animal in animals:
+    print("A " + animal + " would make a great pet")
+print("Any of these animals would make a great pet")
+
+进阶
+
+players = ['charles','martina','micheal','fflorence','eli']
+print(players)
+print("The first three items in the list are:")
+print(players[:3])
+
+
+print("\nThree items from the middle of the list are:")
+print(players[1:4])
+
+print("\nthe last three items in the list are:")
+print(players[-3:])
+
+a = players[:]
+players.append('toto')
+a.append('lala')
+print("My favorite pizzas are:")
+print(players)
+for t in players:
+    print(t)
+    
+print("\nMy friend's favorite pizzas are:")
+print(a)
+for b in a:
+    print(b)
