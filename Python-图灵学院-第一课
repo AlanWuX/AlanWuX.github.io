@@ -1,0 +1,59 @@
+#Pyhon基础
+##python概述
+#计算机语言概述
+    - 语言：交流的工具，沟通媒介
+    - 计算机语言：：人跟计算机交流的工具，翻译官
+    - Python是计算机语言里的一种
+    - python编程语言
+        - 代码：人类语言。通过代码命令机器，跟机器交流
+        - python解析器：就是那个担任翻译工作的二狗子同学
+        - 流程：
+                - 写代码
+                - 执行：有翻译官（python解析器）把命令（CODE）翻译给机器，同时把机器结果翻译给我们
+        - python读音
+         -python简史
+            - 1989年， Guido van Rossum
+            - 2008: Python3.0 诞生 新标准
+            - 2014: 宣布2.7支持到2020
+            - 2017: AI元年，Python崛起
+        - Python特点
+            - 速度问题。
+            - Python跟其他语言的选择问题
+        - Python的应用领域
+            - 全年
+            - 设计哲学：平衡发展，样样通，简洁明了
+        - Python为什么这么火
+            - 会不会持续火
+        - 环境问题
+            - anaconda+pycharm
+            - python3.6
+        - 环境
+            - 学习环境
+                - 直播课：网易云课堂
+                - 讲义+代码： github
+                - 教科书： gitbook
+            - 工作环境
+                - 环境安装：
+                    - gitbook上有
+                    - http://www.cnblogs.com/zhouzhishuai/p/8401103.html
+            - 操作系统
+                - Windows
+                - Linux
+                - MacOx
+                - 我们的标准系统：windows下开虚拟机，虚拟机安装ubuntu
+            - 软件环境：
+                - 不使用pythoon解析器
+                - 使用anaconda3+pytharm代替
+                - 具体环境对各位讲师不做要求
+        - python的执行方式
+            - 本质上python是一堆命令的集合
+            - 执行过程是逐行执行，遇到问题即刻终止（读一条执行一条）
+            - 打印一个命令
+In [2]:
+
+print("Hello world")
+print("图灵学院")
+print("I love wangmeili")
+Hello world
+图灵学院
+I love wangmeili
