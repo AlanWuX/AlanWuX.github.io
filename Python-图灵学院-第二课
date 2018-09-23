@@ -1,0 +1,197 @@
+变量
+程序=数据结构+算法
+变量就是可以重复使用的以一个量，或者叫做一个代号
+变量命名的规则
+变量命名可以包含数字，大小写字母，下划线或者更多，但是我们不推荐除了前三种内容之外的符号
+数字不可以大头
+4man， 5for 是不可以的
+man4， for5是可以的
+一般在Python中，以下划线开头的内容具有特殊含义，不建议使用
+比如 _age, _name, 理论可以，但强烈不推荐，报货但不限于一个下划线开头
+大小写不一样，俗称大小写敏感
+ForMan 跟 forman不是一个变量名称
+推荐：
+使用具有固定含义的英文单词或者缩写，srv=server skt=socket, 一般以posix命名规则为主
+驼峰命名法
+名称以单词自动连接，且每个单词首字母大写
+大驼峰，每个单词第一个字母均大写
+在Python中给类命名使用此法
+MyFirstLove，IntOne
+小驼峰，类似大驼峰，但第一个字母小写
+在Python中一般给普通变量或者函数命名
+myFirstLove,intOne
+posix写法
+多个单词用下划线链接
+单词全部小写
+my_first_love, int_one
+保留字和关键字
+变量命名必须避开，不能跟关键字和保留字重负
+class, def, break, for
+In [1]:
+
+# 查看关键字的方法
+import keyword #引入关键字模块
+print(keyword.kwlist)
+len(keyword.kwlist)
+​
+['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+变量声明
+var_name = var_value
+var1 = var2 = var3 = var_value #
+In [7]:
+
+# 给age1, age2, age3 放入同一个内容或值
+age1 = age2 = age3 = 18
+print(age1)
+print(age2)
+print(age3)
+​
+# 一行内给多个变量赋值
+print("\n")
+age4, age5, age6 = 12, 21, 45
+print(age4)
+print(age5)
+print(age6)
+18
+18
+18
+
+
+12
+21
+45
+变量类型
+严格意义上讲，Python只有一个类型
+标准数据一个六种
+数字类型Number
+字符串类型str
+列表 list
+元组 tuple
+字典 dictionary
+集合 set
+Number数字类型
+数字类型没有大小限制
+整数
+没有小数部分，表示个数的数字
+自然数，0， 负自然数
+整数分进制
+二进制
+计算机常用
+是计算机唯一能直接理解的数字
+表示0b开头的0,1代码
+例如0b1101,0b10001
+八进制
+不常用
+以0o开头的包含0-7的数字
+十六进制
+奉16进1
+其实是每四位二进制表示一位十六进制数
+包含0-9， a-f
+数字上以0x开头表示
+十进制
+18， 89， 178
+In [3]:
+
+十六进制ff表示二进制的1111 1111
+age = 18
+print(18)
+​
+age = 0b10010
+print(age)
+​
+age = 0o102
+print(age)
+​
+age = 0xff   #十六进制ff表示二进制的1111 1111
+print(age)
+18
+18
+66
+255
+
+### 浮点数
+- 小数
+- 计算机里面表示浮点数可以有调节省略
+- 3.1415
+- 3.
+- 0.5
+- .5
+- 科学计数法
+    - 定义跟数学定义
+    - 写法是用e/E后面跟着整数表示10的指数
+    - 176.23 == 1.7634e2
+    - 0.876 == 8.76e-1
+
+​
+In [5]:
+
+shili
+height = 156.34
+print(height)
+​
+shili = 0.2
+print(shili)
+​
+shili = .6
+print(shili)
+156.34
+0.2
+0.6
+复数complex
+定义同数学定义一致
+一个由实部和虚部构成的数字
+虚部用j/J表示
+5+3j
+3j
+（3j）
+布尔值
+表示真假的值
+只有两个值， True/False
+布尔值可以跟数字直接操作
+In [7]:
+
+#布尔值操作
+age = 18 + True
+print(age)
+19
+
+- 单双引号交错使用
+## 字符串
+- 用来表示一串文字信息
+- 如何表示
+    - 单引号
+    - 双引号
+    - 三引号（三个单引号或者三个双引号）
+        - 能够扩起多行信息
+- 单双引号交错使用
+
+In [10]:
+
+htmls
+love = "i love wangxiaojin"
+print(love)
+​
+print("\n")
+love = "我的天"
+print(love)
+​
+# 单双引号交错使用的例子
+# <a style="color:red"> 哈哈哈</a>
+# 用引号表示上面字符
+html = '<a style="color:red"> 哈哈哈</a>'
+​
+htmls = '''
+jskdksdjjf
+jdskdfksdjf
+哈哈哈哈
+​
+'''
+print(htmls)
+i love wangxiaojin
+
+
+我的天
+
+jskdksdjjf
+jdskdfksdjf
+哈哈哈哈
