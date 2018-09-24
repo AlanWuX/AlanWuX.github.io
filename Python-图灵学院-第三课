@@ -1,0 +1,311 @@
+字符串
+转义字符
+格式化
+内建函数（后延）
+转义字符
+用一个特殊的方法表示出一系列不方便写出来的内容，比如回车键，换兴建，退格键
+接触反斜杠字符，一单字符串中出现反斜杠，则斜杠后面的这个字符表示已经不是原来的意思，已经进行转义
+在字符串中，一单出现反斜杠就要加倍小心，可能有转义字符出现
+不同系统对于换行操作有不同的表示
+windows: \n 就行
+Linux： \r\n 才行
+In [2]:
+
+s = "i love AAA"
+print(s)
+i love AAA
+In [11]:
+
+# 如果想表示出let‘s go来
+# 1. 可以使用嵌套引号，即外层使用双引号
+#2. 转义字符
+​
+s = "Let's go"
+print(s)
+​
+# \\ = \
+ss = 'Let\'s go'
+print(ss)
+​
+sss = "c:\\user"
+print(sss)
+​
+# 回车换行符
+s1 = "I love \r\n AAA"  #\r\n是代表换行
+print(s1)
+Let's go
+Let's go
+c:\user
+
+I love
+ AAA
+字符串的格式化
+把字符串按照一定格式打印或者填充
+格式化由两种方法
+利用百分号（%）
+利用format函数
+In [12]:
+
+s = "xxx 您好， 开始学习啦。加油努力！！"
+利用百分号格式化
+在字符串中，利用%表示一个特殊的含义，表示对资费进行格式化
+%d:此处应该放入一个整数
+%s:表示此处应该放进一个字符串
+In [22]:
+
+s = "I love %s"
+# 下面打印，直接把%s作为字母来打印出来了
+print(s)
+I love %s
+In [39]:
+
+mingzi = ['alan','ddd','cccc','sssss']
+for i in mingzi:
+
+    s = "I love %s"%i #后面紧跟加个字符串，就可以直接把名字加入进去，%s被%i代替了。
+    print(s)
+print(s)
+I love alan
+I love ddd
+I love cccc
+I love sssss
+I love sssss
+In [41]:
+
+s = "I am %d years old"
+# 留意下面两句话区别
+print(s)
+print(s%18)
+I am %d years old
+I am 18 years old
+In [46]:
+
+s = "I am %s, i am %d years old"
+print(s)
+#注意一下表达式出错原因
+# 如果字符串中由占位符，则由几个占位符必须需用几个实际内容代替，或者一个也不要
+#print(s%"tulingxueyuan")
+print(s%("tulingxueyuan",18))
+​
+I am %s, i am %d years old
+I am tulingxueyuan, i am 18 years old
+format函数格式化字符串
+直接format函数进行格式化
+在使用上，以{和：代替%号，后面用format带参数完成
+推荐使用，比%格式化常用
+In [4]:
+
+s = "I love {}".format("AAAAA")
+print(s)
+​
+s = "Yes, i am {1} years old , I love {0} and i am {1} years old".format("dada",18)
+print(s)  # 是按format()中的元组的顺序：0代表dada，1代表18.
+I love AAAAA
+Yes, i am 18 years old , I love dada and i am 18 years old
+None
+表示什么都没有
+如果函数没有返回值，可以返回 None
+用来占位置
+用来接触变量绑定
+表达式
+由一个或者几个数字或者变量和运算符组合成的一行代码
+通常会返回一个结果
+运算符
+由一个以上的值经过变化得到新值的过程叫做运算
+用于运算的符号叫运算符
+运算符分类：
+算数运算符
+比较或者关系运算符
+赋值运算符 比如 =
+位运算
+逻辑运算符
+成员运算
+身份运算符
+
+## 算符运算符
+- 进行算符运算符（加减乘除）
+- Python没有自增自减运算符
+In [9]:
+
+a
+# +，-跟正常运算符一样
+a = 9 + 3 - 15
+print(a)
+#乘号是（*）代替
+a = 9 * 4
+print(a)
+#除号是（/）代替
+#在python2.x和Python3.x中，除号（/）结果可能不一致。  2.x里面会取整，9/4 = 2
+a = 9/4
+print(a)
+​
+# % 取余数运算
+# 两个数字相除应该有商数有余数
+# % 只会得到余数
+a = 9 % 4
+print(a)
+​
+# // 便是取整运算，也叫地板除！
+a = 9 // 4
+print(a)
+​
+# **表示幂运算
+a = 9 ** 4
+print(a)
+​
+a = 3 ** 3
+print(a)
+​
+-3
+36
+2.25
+1
+2
+6561
+27
+比较运算符
+对两个变量或者值进行比较的运算符
+比较的结果是布尔值，即Ture/False
+In [15]:
+
+>= 或者 <=
+# == ， 等于号
+a = 3 ** 4
+# 下面语句执行顺序是
+# 1， 计算a == 80(a 是否等于80)
+#2， 把结果放入b中 (=：就是把a 的结果赋值到 b)
+b = a == 80
+print(b)  #因为a 是不等于80的，所以结果是False
+​
+# ！=不等于
+print(9 != 8)
+​
+# > 以及 < 、 >= 或者 <=
+print(99 > 8)
+print(99 < 8)
+False
+True
+True
+赋值运算符
+In [16]:
+
+ /=,//=, %=, **=,都是缩写形式
+# = ， 赋值
+a = 0
+c = a = 4
+​
+# +=, 是缩写
+a = 0
+a += 7 # a = a + 7 的缩写
+print(a)
+​
+#所有数学运算符都有缩写形式
+# -=，x=, /=,//=, %=, **=,都是缩写形式
+7
+
+# 逻辑运算符
+- 对布尔值进行计算的符号
+- and 逻辑与
+- or 逻辑或
+- not 逻辑非
+- Python中逻辑运算没有异或运算
+- 运算规则：
+    - and看做乘法， or看做加法
+    - True看做1， False看做0
+    - 则逻辑运算就能转换成整数淑云运算
+    - 最后结果如是0则为False，否则为True
+- 逻辑运算的短路问题
+    - 逻辑运算式，按照运算顺序计算，一单能够确定整个式子未来的值，则不再进行计算，直接返回
+In [20]:
+
+# 逻辑运算符案例
+a = True
+b = False
+c = True
+​
+#一下式子等价于 d = 1 * 0 + 1 = 1 所以是True
+d = a and b or c
+print(d)
+​
+d = b or b and a  # 0 + 0 * 1 = 0 所以是False
+print(d)
+True
+False
+In [27]:
+
+a = a or (b=9) and 6
+# 逻辑运算的短路案例
+​
+#下面的逻辑表达式，a的值一定是True, 则运行到or的时候，整个表达式不再向下计算
+a = True or xxxxxxxx  # or 是加法，True是1, xxxxx是正数或者0， 1 + 正数 肯定大于0，所以来到True or直接返回一个值。
+​
+# 下面表达式，如果xxx中包含赋值表达式，则结果很难预测
+# 代码实例（伪代码）
+b = 0
+​
+a = a or (b=9) and 6
+#
+print(b)
+print(a)
+  File "<ipython-input-27-ceb98ee206af>", line 10
+    a = a or (b=9) and 6
+               ^
+SyntaxError: invalid syntax
+
+
+成员运算符号
+用来检测某一个变量是否是另外一个变量的成员
+in
+not in
+In [29]:
+
+a not in l
+# 案例
+l = [1,2,3,4,5,6]
+a = 7
+​
+b = a in l   #因为a 不在 l 里面 所以返回给 b 的是 False
+print(b)
+print(a not in l)
+False
+True
+身份运算
+is：用来检测两个变量是否是同一个变量
+语法就是var1 is var2
+is not：两个变量不是同一个变量
+In [35]:
+
+a = 9
+b = 9
+print(a is b)
+​
+a = "aaalove"
+b = "aaalove"
+print(a is b)
+​
+a = "aaa love"
+b = "aaa love"
+print(a is b)
+True
+True
+False
+运算符的优先级问题
+永远记住，括号具有最高优先级
+优先级表格
+** 指数 (最高优先级)
+~ + - 按位翻转, 一元加号和减号 (最后两个的方法名为 +@ 和 -@)
+/ % // 乘，除，取模和取整除
+加法减法
+》 << 右移，左移运算符
+& 位 'AND'
+^ | 位运算符
+<= < > >= 比较运算符
+<> == != 等于运算符
+= %= /= //= -= += = *= 赋值运算符
+is is not 身份运算符
+in not in 成员运算符
+not or and 逻辑运算符
+程序结构
+顺序
+分支 if-else
+循环 for，while
