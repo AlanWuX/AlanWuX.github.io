@@ -1,0 +1,288 @@
+三大结构
+顺序
+分支 if-else
+循环 for，while
+分支
+分支的基本语法
+if 条件表达式：
+  语句1
+  语句2
+  语句3
+  .......
+条件表达式就是计算结果必须为布尔值的表达式
+表达式后面的冒号不能少
+注意if后面的出现的语句，如果属于if语句块，则必须同一个缩进等级
+条件变大时结果俄日True执行if后面的缩进的语句块
+In [7]:
+
+# if语句练习
+# 如果age小于18岁，则打印信息“去教家长”
+age = 17
+if age < 18:   #当age<18为假的时候，下面语句是不会执行的，直接执行下一步，与if同缩进的！
+    print("去叫家长吧，孩纸")
+    print("我们不带你玩")
+    print("go，go，go")
+​
+print("开始上车，一起玩吧！")
+去叫家长吧，孩纸
+我们不带你玩
+go，go，go
+开始上车，一起玩吧！
+In [8]:
+
+print("今天学习for循环")
+gender = "男"
+if gender == "女":
+    print("来，有糖吃。")
+print("我是男的")
+​
+print("开始讲for循环了")
+今天学习for循环
+我是男的
+双向分支
+if...else...语句 if 条件表达式：
+  语句1
+  语句2
+  .....
+else：
+  语句1
+  语句2
+  .....
+双向分支有两个分支，当程序执行到if ... else ...语句的时候，一定会执行if或else中的一个，也仅执行一个
+缩进问题，if和else一个等级，其他语句一个层级
+In [15]:
+
+# input的作用是
+# 1. 在屏幕上输出括号内的字符串
+# 2. 接受用户输入的内容并返回到程序性
+# 3. input返回的内容一定是字符串类型
+gender = input("输入性别：")
+print("你输入的性别是：{0}".format(gender))
+if gender == "男":
+    print("来，我们纪念一下今天吧，代码敲十遍")
+else:
+    print("发糖咯，发糖咯！")
+
+print("开始上课")
+输入性别：男
+你输入的性别是：男
+来，我们纪念一下今天吧，代码敲十遍
+开始上课
+In [24]:
+
+# 考试成绩判断
+# 90以上：输出优秀
+# 80-90： 良
+# 70-80： 中
+# 60-70： 平
+#60一下： 输出：我没有你这学生
+# 注意input的返回值类型是str，所以必须转整数int（）
+sorce = input("请输入学生成绩：")
+sorce = int(sorce)
+if sorce >= 90:
+    print("A")
+if sorce >= 80 and sorce < 90:
+    print("B")
+if sorce >= 70 and sorce < 80:
+    print("C")
+if sorce >= 60 and sorce < 70:
+    print("D")
+if sorce < 60:
+    print("加油吧，孩子")
+请输入学生成绩：86
+B
+多路分支
+很多分支的情况，简称多路分支
+  if 条件表达式：
+      语句1
+      .....
+  elif 条件表达式：
+      语句1
+      .....
+  elif 条件表达式：
+      语句1
+      .....
+elif 可以很多个
+else可选
+多路分支只会选一个执行
+In [26]:
+
+sorce = input("请输入学生成绩：")
+sorce = int(sorce)
+if sorce >= 90:
+    print("A")
+elif sorce >= 80:
+    print("B")
+elif sorce >= 70:
+    print("C")
+elif sorce >= 60:
+    print("D")
+else:
+    print("加油吧，孩子")
+请输入学生成绩：20
+加油吧，孩子
+if 语句其他：
+if语句可以嵌套使用，但不推荐
+Python没有switch-casse语句
+循环语句
+重复执行某些固定动作或者处理基本固定的失误
+分类
+for循环
+while循环
+for循环
+for循环
+ for 变量 in 序列：
+     语句1
+     语句2
+     语句3
+In [27]:
+
+#列表就是一列数字或者其他值，一般用中括号表示
+#例如 ['ldldl','kksksk','jdjdjdj']
+​
+#打印学生列表
+for name in ['ldldl','kksksk','jdjdjdj']:
+    print(name)
+ldldl
+kksksk
+jdjdjdj
+In [31]:
+
+#打印学生列表
+#分开对每个名字进行描述
+for name in ['ldldl','kksksk','jdjdjdj']:
+    print(name)
+    if name == 'kksksk':
+        print("我的最爱{0}出现了".format(name))
+    else:
+        print("同学我们不约。")
+print("继续")
+ldldl
+同学我们不约。
+kksksk
+我的最爱kksksk出现了
+jdjdjdj
+同学我们不约。
+继续
+range介绍
+生产一个数字序列
+具体范围可以设定
+In [35]:
+
+# range练习
+# 打印从1-10的数字
+# 开头到结尾前一个。range只包括左边的，不包括右边
+# rangint是特例，它左右都包含
+# range函数在Python2 和Python3中有严重区别
+for i in range(1,10):
+    print(i)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+for-else语句
+当for循环结束的时候，会执行esle语句
+else语句是可选语句
+In [36]:
+
+# for-else语句
+# 打印列表中的同学
+# 如果没有在列表中，或者列表结束了，我们需要打印提示语句。
+​
+# 打印学生列表行吗
+# 如果是，就打印参数
+# 如果是别的同学，就打印另外参数
+​
+for name in ['ldldl','kksksk','jdjdjdj']:
+    print(name)
+    if name == 'kksksk':
+        print("我的最爱{0}出现了".format(name))
+    else:
+        print("同学我们不约。")
+else:
+    print("别的都不是我的学生。")
+ldldl
+同学我们不约。
+kksksk
+我的最爱kksksk出现了
+jdjdjdj
+同学我们不约。
+别的都不是我的学生。
+for循环之break，contineu，pass
+break：无条件结束整个循环，简称循
+contineu：无条件结束本次循环，从新进入下一轮循环
+pass：表示路过
+In [3]:
+
+# 在1:10的数字中，寻找数字7，一旦找到，打印出来，其余则什么都不做。
+# for 循环中的变量便是，一般用i, k, m, n, 或者indx, idx, item之类
+# 在Python中，如果循环变量名称不重要，可以用下划线（_）代替
+for i in range(1,11):
+    if i == 7:
+        print("我找到了")
+        break
+    else:
+        print(i)
+
+
+1
+2
+3
+4
+5
+6
+我找到了
+In [4]:
+
+continue语句联系
+# continue语句联系
+# 在数字1 - 10中，寻找所有偶数，找到偶数后打印偶数
+for i in range(1,11):
+    if i % 2 == 1:
+        continue
+    else:
+        print("{0}是偶数".format(i))
+2是偶数
+4是偶数
+6是偶数
+8是偶数
+10是偶数
+In [6]:
+
+# continue语句联系 2
+for i in range(1,11):
+    if i % 2 == 0:
+        continue
+
+    print("{0}是偶数".format(i))
+1是偶数
+3是偶数
+5是偶数
+7是偶数
+9是偶数
+In [9]:
+
+# pass例子，一般用于占位
+for i in range(1,11):
+
+    pass
+​
+    print("I Love Python")
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+I Love Python
+In [ ]:
+
+​
